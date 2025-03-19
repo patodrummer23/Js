@@ -62,3 +62,9 @@ function actualizarCarrito() {
         carritoHTML.appendChild(li);
     });
 }
+
+document.querySelectorAll('.btn-comprar').forEach(button => {
+    button.addEventListener('click', function() {
+        alert(`Has comprado una entrada para ${this.dataset.evento} por ${this.dataset.precio}`);
+    });
+});
