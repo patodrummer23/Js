@@ -1,8 +1,4 @@
 
-
-if (18 === null) {
-    alert ("DEBES INGRESAR TU EDAD PARA CONTINUAR");
-}
 let edad = prompt("POR FAVOR, VERIFICA TU EDAD:");
             
             if (edad === null) {
