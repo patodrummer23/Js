@@ -1,70 +1,44 @@
-//variables
+
+
+if (18 === null) {
+    alert ("DEBES INGRESAR TU EDAD PARA CONTINUAR");
+}
+let edad = prompt("POR FAVOR, VERIFICA TU EDAD:");
+            
+            if (edad === null) {
+                alert("DEBES INGRESAR TU EDAD PARA CONTINUAR");
+                location.reload(); 
+            } else if (isNaN(edad) || edad.trim() === "") {
+                alert("POR FAVOR, INGRESA UN NUMERO VALIDO.");
+                location.reload();
+            } else if (parseInt(edad) < 18) {
+                alert("DEBES TENER AL MENOS 18 AÑOS PARA ACCEDER A ESTE SITIO.");
+                document.body.innerHTML = "<h1>ACCESO DENEGADO</h1>";
+            } else {
+                alert("¡BIENVENIDO!");
+}
+
 let valores
+let resultado
+let dolar
+let euro
 
-valores = "$10000"
-valores = "$12000"
-valores = "$40000"
-
-
-const usuarios = [
-    {edad: 17},
-    {edad: 20},
-    {edad: 18},
-    {edad: 15},
-    {edad: 45}
-]
-
-
-
-let edad = 17;
-let dinero = true;
-
-if (edad >= 18 || dinero) {
-    console.log("ENTRAR");
-} else {
-    console.log ("MENORES DE 18, NO ENTRAN");
+function convertidor () {
+let valores = parseInt(document.getElementById("valor").value);     
+let resultado = 0;
+let euro = 1400;
+let dolar = 1250;
+    
+    if (document.getElementById("uno").checked) {
+        resultado = valores * dolar; 
+        alert ("El Cambio de Pesos a Dolares es: usd" +" "+ resultado);
+    }
+    else if (document.getElementById("dos").checked) {
+        resultado = valores * euro;
+        alert ("El Cambio de Pesos a Euros es: eur" +" "+resultado);
+    }
+    else {
+        alert ("COMPLETA TODOS LOS DATOS PARA CONTINUAR")
+    }        
 }
 
-//and (&&)
-//or (||)
-
-const password = "1";
-let passwordingresado = prompt ("Usted tiene +18");
-
-while (passwordingresado != password) {
-    passwordingresado = prompt ("Usted tiene +18");
-}
-
-document.querySelectorAll('.btn-comprar').forEach(button => {
-    button.addEventListener('click', function() {
-        alert(`Has comprado una entrada para ${this.dataset.evento} por ${this.dataset.precio}`);
-    });
-});
-
-
-let carrito = [];
-
-document.querySelectorAll('.btn-comprar').forEach(button => {
-    button.addEventListener('click', function() {
-        let evento = this.dataset.evento;
-        let precio = this.dataset.precio;
-        carrito.push({ evento, precio });
-        actualizarCarrito();
-    });
-});
-
-function actualizarCarrito() {
-    let carritoHTML = document.getElementById('carrito');
-    carritoHTML.innerHTML = '';
-    carrito.forEach(item => {
-        let li = document.createElement('li');
-        li.textContent = `${item.evento} - ${item.precio}`;
-        carritoHTML.appendChild(li);
-    });
-}
-
-document.querySelectorAll('.btn-comprar').forEach(button => {
-    button.addEventListener('click', function() {
-        alert(`Has comprado una entrada para ${this.dataset.evento} por ${this.dataset.precio}`);
-    });
-});

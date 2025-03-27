@@ -5,41 +5,26 @@
     <meta name="viewport" content="width=>, initial-scale=1.0">
     <title>JS</title>
     <link rel="stylesheet" href="./css/style.css">
+    
     <script defer src="./js/script.js"></script>
 </head>
 <body>
-    <h1 id="titulo">Party Time</h1>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Entradas</a></li>
-        </ul>
-    </nav>
-    <ul id="carrito"></ul>
-    <section class="section">
-        <div class="container">
-            <div class="section-cards">
-                <div class="section-card">
-                    <h2>Pool Party</h2>
-                    <p>MAYORES DE 18 AÑOS</p>
-                    <button class="btn-comprar" data-evento="Pool Party" data-precio="$40000">Comprar $40000</button>
-                    
-                </div>
-                <div class="section-card">
-                    <h2>Rock Party</h2>
-                    <p>MAYORES DE 18 AÑOS</p>
-                    <button class="btn-comprar" data-evento="Rock Party" data-precio="$12000">Comprar $12000</button>
-                </div>
-                <div class="section-card">
-                    <h2>Reggae Party</h2>
-                    <p>MAYORES DE 18 AÑOS</p>
-                    <button class="btn-comprar" data-evento="Reggae Party" data-precio="$10000">Comprar $10000</button>
-                </div>
-            </div>
-        </div>
-        
-    </section>    
+    <h1 id="titulo">Casa de Cambio</h1>
+    
+    <form class="Monedas">
+    <p id= "titulo2">Conversor de Monedas</p>
+    <div> 
+        <input type="radio"  name="cambio" id="uno">DOLAR  
+        <input type="radio"  name="cambio" id="dos">EURO
+        <p id= "titulo3"> INGRESE MONTO A CONVERTIR</p>
+    </div>
+    <div >
+        <input class="convertidor" type="number" id="valor" min="100" max="100000">
+        <input class="resultado" type="button" id="cotizar" value="Cambio" onclick="convertidor()">
+    </div>
+   
+
+
     
 </body>
 </html>
